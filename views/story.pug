@@ -1,0 +1,30 @@
+extends layout
+
+include mixins/_reviewForm
+include mixins/_review
+
+block content
+  .single
+    .single__hero
+      img.single__image(src=`/uploads/${story.photo || 'story.png'}`)
+      h2.title.title--single
+        a(href=`/story/${story.slug}`) #{story.name}
+
+  .single__details.inner
+    p= story.description
+
+    if story.tags
+      ul.tags
+        each tag in story.tags
+          li.tag
+            a.tag__link(href=`/tags/${tag}`)
+              span.tag__text  ##{tag}
+
+    if user
+      +reviewForm(story)
+
+    if story.reviews
+      .reviews
+        each review in story.reviews
+          .review
+            +review(review)

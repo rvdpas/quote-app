@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .inner
+    h2 Top #{stories.length} Stories
+    table.table
+      thead
+        td photo
+        td ranking
+        td name
+        td reviews
+        td Average Rating
+      each story, i in stories
+        tr
+          td
+            a(href=`/story/${story.slug}`)
+              img(width=200 src=`/uploads/${story.photo || 'story.png'}` alt=story.name)
+          td #{i + 1}
+          td: a(href=`/story/${story.slug}`)= story.name
+          td= story.reviews.length
+          td #{Math.round(story.averageRating * 10) / 10} / 5

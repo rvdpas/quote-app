@@ -1,0 +1,12 @@
+extends layout
+
+include mixins/_storyCard
+include mixins/_pagination
+
+block content
+  .inner
+    h2= title
+    .stores
+      each story in stories
+        +storyCard(story)
+    +pagination(page, pages, count)
