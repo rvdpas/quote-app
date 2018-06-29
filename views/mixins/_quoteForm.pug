@@ -1,0 +1,15 @@
+mixin quoteForm(quote = {})
+  form(action=`/add/${quote._id || ''}` method="POST" class="card" enctype="multipart/form-data")
+    label(for="name") Name
+    input(type="text" name="name" value=quote.name)
+    label(for="description") Quote
+    textarea(name="description")= quote.description
+
+    - const choices = ['Javascript', 'Programming', 'Errors']
+    - const tags = quote.tags || []
+    ul.tags
+      each choice in choices
+        .tag.tag__choice
+          input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
+          label(for=choice) #{choice}
+    input(type="submit" value="Save →" class="button")

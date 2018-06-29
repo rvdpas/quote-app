@@ -1,0 +1,30 @@
+extends layout
+
+include mixins/_reviewForm
+include mixins/_review
+
+block content
+  .single
+    .single__hero
+      img.single__image(src=`/uploads/${quote.photo || 'quote.jpg'}`)
+      h2.title.title--single 
+        span #{quote.name}
+
+  .single__details.inner
+    p= quote.description
+
+    if quote.tags
+      ul.tags
+        each tag in quote.tags
+          li.tag
+            a.tag__link(href=`/tags/${tag}`)
+              span.tag__text  ##{tag}
+
+    if user
+      +reviewForm(quote)
+
+    if quote.reviews
+      .reviews
+        each review in quote.reviews
+          .review
+            +review(review)

@@ -21,7 +21,7 @@ exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 exports.siteName = `Write your own Quote!`;
 
 exports.menu = [
-  { slug: '/stories', title: 'Stories', icon: 'store', },
+  { slug: '/Quotes', title: 'Quotes', icon: 'quote', },
   { slug: '/tags', title: 'Tags', icon: 'tag', },
   { slug: '/add', title: 'Add', icon: 'add', },
 ];

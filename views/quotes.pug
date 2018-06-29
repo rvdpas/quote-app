@@ -1,0 +1,12 @@
+extends layout
+
+include mixins/_quoteCard
+include mixins/_pagination
+
+block content
+  .inner
+    h2= title
+    .stores
+      each quote in quotes
+        +quoteCard(quote)
+    +pagination(page, pages, count)

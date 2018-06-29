@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .inner
+    h2 Top #{quotes.length} Quotes
+    table.table
+      thead
+        td photo
+        td ranking
+        td name
+        td reviews
+        td Average Rating
+      each quote, i in quotes
+        tr
+          td
+            a(href=`/quote/${quote.slug}`)
+              img(width=200 src=`/uploads/${quote.photo || 'quote.jpg'}` alt=quote.name)
+          td #{i + 1}
+          td: a(href=`/quote/${quote.slug}`)= quote.name
+          td= quote.reviews.length
+          td #{Math.round(quote.averageRating * 10) / 10} / 5

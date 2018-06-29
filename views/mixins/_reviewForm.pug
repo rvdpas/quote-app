@@ -1,5 +1,5 @@
-mixin reviewForm(store)
-  form.reviewer(action=`/reviews/${store._id}` method="POST")
+mixin reviewForm(quote)
+  form.reviewer(action=`/reviews/${quote._id}` method="POST")
     textarea(name="text" placeholder="What did you think about the quote? Leave a review....")
     .reviewer__meta
       .reviewer__stars

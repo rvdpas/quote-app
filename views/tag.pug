@@ -1,6 +1,6 @@
 extends layout
 
-include mixins/_storyCard
+include mixins/_quoteCard
 
 block content
   .inner
@@ -12,5 +12,5 @@ block content
             span.tag__text= t._id
             span.tag__count= t.count
     .stores
-      each story in stories
-        +storyCard(story)
+      each quote in quotes
+        +quoteCard(quote)
