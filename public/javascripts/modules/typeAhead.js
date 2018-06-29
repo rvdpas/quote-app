@@ -1,11 +1,11 @@
 import axios from 'axios';
 import dompurify from 'dompurify';
 
-function searchResultsHTML(stories) {
-  return stories.map(story => {
+function searchResultsHTML(quotes) {
+  return quotes.map(quote => {
     return `
-      <a href="/stories/${story.slug}" class="search__result">
-        <strong>${story.name}</strong>
+      <a href="/quotes/${quote.slug}" class="search__result">
+        <strong>${quote.name}</strong>
       </a>
     `;
   }).join('');

@@ -36,7 +36,6 @@ p {
   font-size: 40px;
   z-index: 2;
   line-height:1.1;
-  transform: skew(0, -3deg);
   &--long {
     font-size: 30px;
   }
@@ -54,7 +53,7 @@ p {
   }
   line-height:1.1;
   // inline link inside
-  a {
+  span, a {
     border-bottom: 0;
     $yellowa: rgba($yellow,0.8);
     background-image: linear-gradient(to right, $yellowa 100%, $yellowa 50%);
