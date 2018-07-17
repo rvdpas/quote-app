@@ -1,5 +1,5 @@
 # Quote app
-A quote app by Rob van der Pas
+A quote app by Rob van der Pas 
 
 ![Quotes overview](https://github.com/rvdpas/quote-app/blob/master/public/images/github/quotes.jpg)
 
